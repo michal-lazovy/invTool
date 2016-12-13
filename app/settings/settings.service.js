@@ -1,4 +1,4 @@
-System.register(['angular2/core', "angular2/http", 'rxjs/operator/map', 'rxjs/Rx'], function(exports_1, context_1) {
+System.register(['angular2/core', "angular2/http", './../../globals.ts', 'rxjs/operator/map', 'rxjs/Rx'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', "angular2/http", 'rxjs/operator/map', 'rxjs/Rx
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, http_1;
+    var core_1, http_1, myGlobals;
     var SettingsService;
     return {
         setters:[
@@ -20,6 +20,9 @@ System.register(['angular2/core', "angular2/http", 'rxjs/operator/map', 'rxjs/Rx
             function (http_1_1) {
                 http_1 = http_1_1;
             },
+            function (myGlobals_1) {
+                myGlobals = myGlobals_1;
+            },
             function (_1) {},
             function (_2) {}],
         execute: function() {
@@ -28,12 +31,12 @@ System.register(['angular2/core', "angular2/http", 'rxjs/operator/map', 'rxjs/Rx
                     this._http = _http;
                 }
                 SettingsService.prototype.getFunds = function () {
-                    return this._http.get('http://127.0.0.1/ws/service/funds.php').map(function (responseData) {
+                    return this._http.get('http://' + myGlobals.srv + '/ws/service/funds.php').map(function (responseData) {
                         return responseData.json();
                     });
                 };
                 SettingsService.prototype.setFunds = function (funds) {
-                    this._http.post('http://127.0.0.1/ws/service/setfunds.php', funds).toPromise().then(waitingDialog.hide());
+                    this._http.post('http://' + myGlobals.srv + '/ws/service/setfunds.php', funds).toPromise().then(waitingDialog.hide());
                 };
                 SettingsService = __decorate([
                     core_1.Injectable(), 

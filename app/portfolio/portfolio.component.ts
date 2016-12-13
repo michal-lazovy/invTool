@@ -21,8 +21,8 @@ declare var google:any;
             <a (click)="showLineChartFor(i)">{{f.name}}</a>
           </div>
           <div id="fund_line_chart" style="height: 500px;"></div>
-          <div *ngIf="selectedIndex != null">
-          <button (click)="selectInterval(1)">Week</button><button (click)="selectInterval(2)">Month</button><button (click)="selectInterval(3)">Year</button><button (click)="selectInterval(4)">All</button>
+          <div *ngIf="selectedIndex != null" style="text-align:center;margin-bottom:50px;">
+          <button (click)="selectInterval(1)" class="btn btn-primary my-button">Week</button><button (click)="selectInterval(2)" class="btn btn-primary my-button">Month</button><button (click)="selectInterval(3)" class="btn btn-primary my-button">Year</button><button (click)="selectInterval(4)" class="my-button btn btn-primary">All</button>
           </div>
         </div>
       </div>

@@ -7,13 +7,19 @@
 
   #lineChart {
     float:left;
-    margin:none;
+    margin-bottom: 150px;
     width: 700px;
   }
 
   #actual_portfolio_value {
     text-align: center;
     font-weight: bold;
+  }
+
+  .my-button {
+      margin-right: 15px;
+      margin-left: 15px;
+      margin-bottom: 50px;
   }
 
 
